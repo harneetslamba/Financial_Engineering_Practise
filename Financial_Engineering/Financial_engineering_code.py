@@ -22,3 +22,9 @@ print("Cleaned data saved to Excel file.")
 
 data_summary = clean_data['Product'].value_counts().reset_index()
 data_summary.columns = ['Product', 'Count']
+<<<<<<< HEAD
+=======
+
+df = data.pivot_table(index='Product', values='Consumer complaint narrative', aggfunc=lambda x: ' '.join(x))
+df.to_csv(r"C:\D_Drive\Practise\machine_learning_pipeline\data\data\pivoted_consumer_complaints.csv")
+>>>>>>> test_branch
