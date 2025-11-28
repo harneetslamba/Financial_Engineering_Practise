@@ -10,3 +10,7 @@ data = data.loc[data['Product'].isin(['Credit reporting, credit repair services,
                                      'Debt collection'])]
 clean_data = data[['Product', 'Consumer complaint narrative']].copy()
 clean_data['addressed_narrative'] = clean_data['Consumer complaint narrative'].str.lower()
+
+clean_data.to_excel(r"C:\D_Drive\Practise\machine_learning_pipeline\data\cleaned_complaints.xlsx", index=False)
+print("Cleaned data saved to Excel file.")
+
