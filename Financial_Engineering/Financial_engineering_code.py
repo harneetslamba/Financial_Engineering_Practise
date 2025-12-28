@@ -43,3 +43,5 @@ print("Data summary saved to CSV file.")
 clean_data.to_csv(r"C:\D_Drive\Practise\machine_learning_pipeline\data\data\final_cleaned_complaints.csv", index=False)
 print("Final cleaned data saved to CSV file.")
 
+# Change directory path as needed
+clean_data.to_csv(r"C:\D_Drive\Practise\machine_learning_pipeline\data\data\final_cleaned_complaints.csv", index=False)
