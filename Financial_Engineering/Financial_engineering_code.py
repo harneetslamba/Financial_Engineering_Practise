@@ -11,6 +11,9 @@ data = data.loc[data['Product'].isin(['Credit reporting, credit repair services,
 clean_data = data[['Product', 'Consumer complaint narrative']].copy()
 clean_data['addressed_narrative'] = clean_data['Consumer complaint narrative'].str.lower()
 
+clean_data.to_excel(r"C:\D_Drive\Practise\machine_learning_pipeline\data\cleaned_complaints.xlsx", index=False)
+print("Cleaned data saved to Excel file.")
+
 clean_data['addressed_narrative'] = clean_data['addressed_narrative'].apply(
     lambda x: re.sub(r'http\S+|www\S+|https\S+', '', x, flags=re.MULTILINE))
 
@@ -23,6 +26,11 @@ data_summary.columns = ['Product', 'Count']
 df = data.pivot_table(index='Product', values='Consumer complaint narrative', aggfunc=lambda x: ' '.join(x))
 df.to_csv(r"C:\D_Drive\Practise\machine_learning_pipeline\data\data\pivoted_consumer_complaints.csv")
 
-print("Pivoted data saved to CSV file.")
-clean_data.to_csv(r"C:\D_Drive\Practise\machine_learning_pipeline\data\data\cleaned_consumer_complaints.csv", index=False)
-print("Cleaned data saved to CSV file.")
+Additional_summary = clean_data['Product'].value_counts().reset_index()
+Additional_summary.columns = ['Product', 'Count']
+
+Additional_summary.to_csv(r"C:\D_Drive\Practise\machine_learning_pipeline\data\data\complaint_summary.csv", index=False)
+print("Data summary saved to CSV file.")
+
+clean_data.to_csv(r"C:\D_Drive\Practise\machine_learning_pipeline\data\data\final_cleaned_complaints.csv", index=False)
+print("Final cleaned data saved to CSV file.")
