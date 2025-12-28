@@ -27,10 +27,21 @@ df = data.pivot_table(index='Product', values='Consumer complaint narrative', ag
 df.to_csv(r"C:\D_Drive\Practise\machine_learning_pipeline\data\data\pivoted_consumer_complaints.csv")
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Additional_summary = clean_data['Product'].value_counts().reset_index()
 Additional_summary.columns = ['Product', 'Count']
 =======
 print("Pivoted data saved to CSV file.")
 clean_data.to_csv(r"C:\D_Drive\Practise\machine_learning_pipeline\data\data\cleaned_consumer_complaints.csv", index=False)
 print("Cleaned data saved to CSV file.")
+>>>>>>> test_branch
+=======
+Additional_summary = clean_data['Product'].value_counts().reset_index()
+Additional_summary.columns = ['Product', 'Count']
+
+Additional_summary.to_csv(r"C:\D_Drive\Practise\machine_learning_pipeline\data\data\complaint_summary.csv", index=False)
+print("Data summary saved to CSV file.")
+
+clean_data.to_csv(r"C:\D_Drive\Practise\machine_learning_pipeline\data\data\final_cleaned_complaints.csv", index=False)
+print("Final cleaned data saved to CSV file.")
 >>>>>>> test_branch
