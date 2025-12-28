@@ -40,3 +40,7 @@ print("Data summary saved to CSV file.")
 
 clean_data.to_csv(r"C:\D_Drive\Practise\machine_learning_pipeline\data\data\final_cleaned_complaints.csv", index=False)
 print("Final cleaned data saved to CSV file.")
+
+clean_data = clean_data.merge(data_summary, on='Product', how='left')
+clean_data.to_csv(r"C:\D_Drive\Practise\machine_learning_pipeline\data\data\merged_cleaned_complaints.csv", index=False)
+print("Merged cleaned data saved to CSV file.")
