@@ -25,3 +25,6 @@ data_summary.columns = ['Product', 'Count']
 
 df = data.pivot_table(index='Product', values='Consumer complaint narrative', aggfunc=lambda x: ' '.join(x))
 df.to_csv(r"C:\D_Drive\Practise\machine_learning_pipeline\data\data\pivoted_consumer_complaints.csv")
+
+Additional_summary = clean_data['Product'].value_counts().reset_index()
+Additional_summary.columns = ['Product', 'Count']
