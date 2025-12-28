@@ -29,7 +29,7 @@ df.to_csv(r"C:\D_Drive\Practise\machine_learning_pipeline\data\data\pivoted_cons
 
 Additional_summary = clean_data['Product'].value_counts().reset_index()
 Additional_summary.columns = ['Product', 'Count']
-=======
+
 print("Pivoted data saved to CSV file.")
 clean_data.to_csv(r"C:\D_Drive\Practise\machine_learning_pipeline\data\data\cleaned_consumer_complaints.csv", index=False)
 print("Cleaned data saved to CSV file.")
